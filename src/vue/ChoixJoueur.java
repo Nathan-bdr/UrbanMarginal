@@ -11,15 +11,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
 import controleur.Controle;
+
 import java.awt.Cursor;
 import java.awt.Dimension;
 
 /**
  * Frame du choix du joueur
- *
  */
 public class ChoixJoueur extends JFrame {
+
 	/**
 	 * Nombre de personnages différents
 	 */
@@ -66,7 +68,7 @@ public class ChoixJoueur extends JFrame {
 	 */
 	private void lblGo_clic() {
 		if(this.txtPseudo.getText().equals("")) {
-			JOptionPane.showMessageDialog(null, "La saisie de pseudo est obligatoire");
+			JOptionPane.showMessageDialog(null, "La saisie du pseudo est obligatoire");
 			this.txtPseudo.requestFocus();
 		} else {
 			this.controle.evenementChoixJoueur(this.txtPseudo.getText(), numPerso);
@@ -77,11 +79,11 @@ public class ChoixJoueur extends JFrame {
 	 * Affichage du personnage correspondant au numéro numPerso
 	 */
 	private void affichePerso() {
-		String chemin = "personnage/perso"+this.numPerso+"marche"+1+"d"+1+".gif";
+		String chemin = "personnages/perso"+this.numPerso+"marche"+1+"d"+1+".gif";
 		URL resource = getClass().getClassLoader().getResource(chemin);
-		this.lblPersonnage.setIcon(new ImageIcon(resource));
+		this.lblPersonnage.setIcon(new ImageIcon(resource));		
 	}
-	
+
 	/**
 	 * Change le curseur de la souris en forme normale
 	 */
@@ -95,7 +97,6 @@ public class ChoixJoueur extends JFrame {
 	private void sourisDoigt() {
 		contentPane.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	}
-
 
 	/**
 	 * Create the frame.
@@ -113,7 +114,7 @@ public class ChoixJoueur extends JFrame {
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		lblPersonnage = new JLabel("");
 		lblPersonnage.setBounds(142, 115, 120, 120);
 		lblPersonnage.setHorizontalAlignment(SwingConstants.CENTER);
@@ -186,16 +187,15 @@ public class ChoixJoueur extends JFrame {
 		lblFond.setIcon(new ImageIcon(resource));		
 		contentPane.add(lblFond);
 		
-		// récupération de l'instance de contrôle
+		// récupération de l'instance de Controle
 		this.controle = controle;
 		
 		// affichage du premier personnage
 		this.numPerso = 1;
 		this.affichePerso();
-		
+
 		// positionnement sur la zone de saisie
 		txtPseudo.requestFocus();
 
 	}
-
 }

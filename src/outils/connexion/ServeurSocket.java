@@ -35,14 +35,14 @@ public class ServeurSocket extends Thread {
 				this.start();		
 			}
 		} catch (IOException e) {
-			// problème grave qui ne devrait pas se produire : arrêt du programme
+			// probl�me grave qui ne devrait pas se produire : arrêt du programme
 			System.out.println("erreur grave cr�ation socket serveur : "+e);
 			System.exit(0);
 		}
 	}
 	
 	/**
-	 * Méthode thread qui va attendre la connexion d'un client
+	 * M�thode thread qui va attendre la connexion d'un client
 	 */
 	public void run() {
 		// objet qui va récupérer le socket du client qui s'est connecté

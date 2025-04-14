@@ -1,5 +1,4 @@
 package modele;
-
 /**
  * Gestion des murs
  *
