@@ -4,7 +4,7 @@ import java.awt.Font;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
- 
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -13,7 +13,6 @@ import controleur.Global;
 
 /**
  * Gestion des joueurs
- *
  */
 public class Joueur extends Objet implements Global {
 
@@ -62,9 +61,17 @@ public class Joueur extends Objet implements Global {
 	}
 
 	/**
+	 * Obtenir le pseudo du joueur
+	 * @return the pseudo
+	 */
+	public String getPseudo() {
+		return pseudo;
+	}
+
+	/**
 	 * Initialisation d'un joueur (pseudo et numéro, calcul de la 1ère position, affichage, création de la boule)
-	 * @param numPerso numéro du personnage
 	 * @param pseudo pseudo du joueur
+	 * @param numPerso numéro du personnage
 	 * @param lesJoueurs collection contenant tous les joueurs
 	 * @param lesMurs collection contenant les murs
 	 */
@@ -133,7 +140,7 @@ public class Joueur extends Objet implements Global {
 	/**
 	 * Contrôle si le joueur touche un des autres joueurs
 	 * @param lesJoueurs collection contenant tous les joueurs
-	 * @return true si deux joueurs se touchent
+	 * @return true si le joueur touche un autre joueur
 	 */
 	private Boolean toucheJoueur(Collection<Joueur> lesJoueurs) {
 		for(Joueur unJoueur : lesJoueurs) {

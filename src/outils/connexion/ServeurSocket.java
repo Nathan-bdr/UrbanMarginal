@@ -6,8 +6,6 @@ import java.net.Socket;
 
 /**
  * Gestion d'un serveur : création d'une connexion de type serveur pour attendre les connexions de clients
- * @author emds
- *
  */
 public class ServeurSocket extends Thread {
 

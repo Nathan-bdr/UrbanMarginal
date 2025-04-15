@@ -9,12 +9,11 @@ import controleur.Global;
 
 /**
  * Gestion des murs
- *
  */
 public class Mur extends Objet implements Global {
 
 	/**
-	 * Constructeur : crée un mur à une position aléatoire
+	 * Constructeur : crée un mur (position aléatoire, image)
 	 */
 	public Mur() {
 		// calcul position aléatoire du mur
@@ -26,6 +25,7 @@ public class Mur extends Objet implements Global {
 		jLabel.setBounds(posX, posY, LARGEURMUR, HAUTEURMUR);
 		URL resource = getClass().getClassLoader().getResource(MUR);
 		jLabel.setIcon(new ImageIcon(resource));
+
 	}
 	
 }

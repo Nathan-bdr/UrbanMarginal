@@ -7,8 +7,6 @@ import java.net.Socket;
 
 /**
  * Gestion de la connexion entre 2 ordinateurs distants
- * @author emds
- *
  */
 public class Connection extends Thread {
 	

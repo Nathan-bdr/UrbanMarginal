@@ -2,8 +2,6 @@ package outils.connexion;
 
 /**
  * Permet la récupération asynchrone d'une réponse
- * @author emds
- *
  */
 public interface AsyncResponse {
 	/**

@@ -5,7 +5,6 @@ import outils.connexion.Connection;
 
 /**
  * Informations et méthodes communes aux jeux client et serveur
- *
  */
 public abstract class Jeu {
 	

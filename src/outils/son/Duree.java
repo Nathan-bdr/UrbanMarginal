@@ -3,7 +3,7 @@ package outils.son;
 import java.io.Serializable;
 
 /**
- * Représente une durée
+ * ReprÃ©sente une durÃ©e
  */
 
 public class Duree implements Serializable
@@ -30,11 +30,11 @@ public class Duree implements Serializable
     if(microseconde < 0)
     {
       throw new IllegalArgumentException(
-          "Le nombre de microsecondes ne peut pas être négative");
+          "Le nombre de microsecondes ne peut pas ï¿½tre nï¿½gative");
     }
     if(microseconde > 999999)
     {
-      throw new IllegalArgumentException("Le nombre de microsecondes ne peut pas être plus de 999999, sinon on a des secondes");
+      throw new IllegalArgumentException("Le nombre de microsecondes ne peut pas ï¿½tre plus de 999999, sinon on a des secondes");
     }
     this.microseconde = microseconde;
     this.microsecondes = (long)this.microseconde;
@@ -45,12 +45,12 @@ public class Duree implements Serializable
     if(seconde < 0)
     {
       throw new IllegalArgumentException(
-          "Le nombre de secondes ne peut pas être négative");
+          "Le nombre de secondes ne peut pas ï¿½tre nï¿½gative");
     }
     if(seconde > 59)
     {
       throw new IllegalArgumentException(
-          "Le nombre de secondes ne peut pas être plus de 59, sinon on a des minutes");
+          "Le nombre de secondes ne peut pas ï¿½tre plus de 59, sinon on a des minutes");
     }
     this.seconde = seconde;
     this.microsecondes += 1000000L * (long)this.seconde;
@@ -61,12 +61,12 @@ public class Duree implements Serializable
     if(minute < 0)
     {
       throw new IllegalArgumentException(
-          "Le nombre de minutes ne peut pas être négative");
+          "Le nombre de minutes ne peut pas ï¿½tre nï¿½gative");
     }
     if(minute > 59)
     {
       throw new IllegalArgumentException(
-          "Le nombre minutes ne peut pas être plus de 59, sinon on a des heures");
+          "Le nombre minutes ne peut pas ï¿½tre plus de 59, sinon on a des heures");
     }
     this.minute = minute;
     this.microsecondes += 60L * 1000000L * (long)this.minute;
@@ -77,7 +77,7 @@ public class Duree implements Serializable
     if(heure < 0)
     {
       throw new IllegalArgumentException(
-          "Le nombre d'heure ne peut pas être négative");
+          "Le nombre d'heure ne peut pas ï¿½tre nï¿½gative");
     }
     this.heure = heure;
     this.microsecondes += 60L * 60L * 1000000L * (long)this.heure;

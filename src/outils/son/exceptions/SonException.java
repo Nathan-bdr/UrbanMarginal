@@ -3,7 +3,7 @@ package outils.son.exceptions;
 import java.io.Serializable;
 
 /**
- * Excpetion générale <br>
+ * Excpetion gÃ©nÃ©rale <br>
  */
 
 public class SonException

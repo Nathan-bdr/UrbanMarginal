@@ -3,14 +3,14 @@ package outils.son.ecouteurs;
 import outils.son.Sound;
 
 /**
- * Indique que l'objet écoute les événements sons <br>
+ * Indique que l'objet Ã©coute les Ã©vÃ¨nements sons <br>
  */
 
 public interface EcouteurSon
 {
   /**
-   * Indique qu'un son est terminé
-   * @param son Son qui a finit de joué
+   * Indique qu'un son est terminÃ©
+   * @param son Son qui a finit de jouer
    */
   public void sonTermine(Sound son);
   /**

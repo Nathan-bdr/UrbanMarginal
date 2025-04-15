@@ -3,7 +3,7 @@ package outils.son.exceptions;
 import java.io.Serializable;
 
 /**
- * Exception levée pour signaler une erreur de lecture du son <br>
+ * Exception levÃ©e pour signaler une erreur de lecture du son <br>
  */
 
 public class SonErreurLecture

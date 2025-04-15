@@ -8,8 +8,6 @@ import javax.swing.JOptionPane;
 
 /**
  * Gestion d'un client : création d'une connexion cliente
- * @author emds
- *
  */
 public class ClientSocket {
 	
