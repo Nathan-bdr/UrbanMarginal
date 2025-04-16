@@ -39,6 +39,14 @@ public abstract class Objet {
 		return posY;
 	}
 	
+	public void setPosX(Integer posX) {
+		this.posX = posX;
+	}
+
+	public void setPosY(Integer posY) {
+		this.posY = posY;
+	}
+	
 	/**
 	 * Obtenir le personnage choisi
 	 * @return the jLabel
