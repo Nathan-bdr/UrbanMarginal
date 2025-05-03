@@ -97,6 +97,7 @@ public class Boule extends Objet implements Global, Runnable {
 			// gestion du gain et de la perte de vie
 			victime.perteVie();
 			attaquant.gainVie();
+			attaquant.gainBoules(2);
 			// joue l'animation de la victime blessée
 			for (int k=1; k<=NBETAPESTOUCHE; k++) {
 				victime.affiche(TOUCHE, k);
@@ -106,6 +107,7 @@ public class Boule extends Objet implements Global, Runnable {
 			if (victime.estMort()) {
 				// envoi du son DEATH
 				this.jeuServeur.envoi(DEATH);
+				attaquant.gainBoules(2);
 				// jour l'animation de la mort
 				for (int k=1; k<=NBETAPESMORT; k++) {
 					victime.affiche(MORT,  k);

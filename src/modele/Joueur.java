@@ -48,6 +48,10 @@ public class Joueur extends Objet implements Global {
 	 * tourné vers la gauche (0) ou vers la droite (1)
 	 */
 	private int orientation ;
+	/**
+	 * Nombre de boules du joueur
+	 */
+	private int nbBoules;
 	
 	/**
 	 * Constructeur : récupératon de jeuServeur et initialisaton de certaines propriétés
@@ -86,6 +90,7 @@ public class Joueur extends Objet implements Global {
 	public void initPerso(String pseudo, int numPerso, Collection lesJoueurs, Collection lesMurs) {
 		this.pseudo = pseudo;
 		this.numPerso = numPerso;
+		this.nbBoules = 10;
 		System.out.println("joueur "+pseudo+" - num perso "+numPerso+" créé");
 		// création du label du personnage
 		super.jLabel = new JLabel();
@@ -131,9 +136,32 @@ public class Joueur extends Objet implements Global {
 		super.jLabel.setIcon(new ImageIcon(resource));
 		// positionnement et remplissage du message sous le perosnnage
 		this.message.setBounds(posX-10, posY+HAUTEURPERSO, LARGEURPERSO+10, HAUTEURMESSAGE);
-		this.message.setText(pseudo+" : "+vie);
+		this.message.setText(pseudo+" : "+vie+" | "+nbBoules);
 		// demande d'envoi à tous des modifications d'affichage
 		this.jeuServeur.envoiJeuATous();
+	}
+	
+	/**
+	 * Obtenir le nombre de boules du joueur
+	 * @return nb de boules
+	 */
+	public int getNbBoules() {
+		return nbBoules;
+	}
+	
+	/**
+	 * Le joueur perd une boule
+	 */
+	public void perdBoule() {
+		this.nbBoules = Math.max(0,  this.nbBoules - 1);
+	}
+	
+	/**
+	 * Le joueur gagne un certain nombre de boules
+	 * @param nb nombre de boules gagnées
+	 */
+	public void gainBoules(int nb) {
+		this.nbBoules += nb;
 	}
 
 	/**
@@ -160,8 +188,10 @@ public class Joueur extends Objet implements Global {
 				posY = deplace(posY, action, PAS, HAUTEURARENE - HAUTEURPERSO - HAUTEURMESSAGE, lesJoueurs, lesMurs);
 				break;
 			case KeyEvent.VK_SPACE:
-				if (!this.boule.getjLabel().isVisible()) {
+				if (!this.boule.getjLabel().isVisible() && this.nbBoules > 0) {
 					this.boule.tireBoule(this, lesMurs);
+					this.perdBoule();
+					this.affiche(MARCHE,  this.etape);
 				}
 				break;
 			}
