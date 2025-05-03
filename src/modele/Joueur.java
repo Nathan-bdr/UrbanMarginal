@@ -175,11 +175,19 @@ public class Joueur extends Objet implements Global {
 	private int deplace(int position, int action, int lepas, int max, Collection lesJoueurs, Collection lesMurs) { 
 		int ancpos = position;
 		position += lepas;
-		position = Math.max(position,  0);
-		position = Math.min(position,  max);
 		if (action==KeyEvent.VK_LEFT || action==KeyEvent.VK_RIGHT) {
+			if (position < 0) {
+				position = max;
+			} else if (position > max) {
+				position = 0;
+			}
 			posX = position;
-		} else {
+		} else if (action==KeyEvent.VK_UP || action==KeyEvent.VK_DOWN) {
+			if (position < 0) {
+				position = max;
+			} else if (position > max) {
+				position = 0;
+			}
 			posY = position;
 		}
 		// contrôle s'il y a des collisions, et dans ce cas le personnage reste sur place
